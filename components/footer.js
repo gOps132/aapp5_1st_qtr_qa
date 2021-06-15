@@ -11,7 +11,7 @@ const Footer = () => {
 			<div className={footer_style.m_footer_elm}>
 				<h2>INFO</h2>
 				<p>
-					NULL
+					made by Gian Cedrick
 				</p>
 			</div>
 			<div className={footer_style.m_footer_elm}>

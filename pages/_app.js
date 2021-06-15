@@ -8,12 +8,17 @@ import React, { useState, useCallback } from "react";
 
 function MyApp({ Component, pageProps }) {
 	// starts with light
-	const theme_map = {
-		light: 'dark',
-		solar: 'light',
-		dark: 'solar'
-	};
+	
+	// const theme_map = {
+	// 	light: 'dark',
+	// 	solar: 'light',
+	// 	dark: 'solar',
+	// };
 
+	const theme_map = {
+		sea: 'dark',
+		dark: 'sea',
+	};
 
 	let [currentTheme, useTheme] = useState(
 		(Object.keys(theme_map)[0]));
@@ -32,7 +37,7 @@ function MyApp({ Component, pageProps }) {
 				</div>
 				<Footer />
 			</article>
-			<Scbtn/>
+			<Scbtn />
 		</div>
 	)
 }

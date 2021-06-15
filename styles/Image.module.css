@@ -1,0 +1,13 @@
+.image_border_circle, .image_border_circle img {
+	max-width: fit-content;
+	
+	display: flex;
+
+	align-items: center;
+	justify-content: center;
+
+	border-color: var(--bg-secondary);
+	border-radius: 50%;
+
+	/* box-shadow: 0px 10px 10px var(--bg-secondary); */
+}

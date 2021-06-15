@@ -3,12 +3,9 @@ import React from "react";
 
 import Link from "next/link";
 
-// import HouseIcon from "../public/svg/house-user-solid.svg";
-// import HandPeaceIcon from "../public/svg/hand-peace-solid.svg";
 import GithubBrandIcon from "../public/svg/github-brands.svg";
-// import LaughSquint from "../public/svg/laugh-squint-solid.svg";
-// import HeadePhonesAlt from  "../public/svg/headphones-alt-solid.svg"
-// import TicketAlt from  "../public/svg/ticket-alt-solid.svg"
+
+import SeaIcon from "../public/svg/water-solid.svg";
 
 const Nav = ({ theme, theme_callback }) => {
 	const GetThemeType = () => {
@@ -16,6 +13,8 @@ const Nav = ({ theme, theme_callback }) => {
 			return <DarkIcon/>
 		else if(theme == "light")
 			return <LightIcon/>
+		else if(theme == "sea")
+			return <SeaIcon/>
 		else
 			return <SolarIcon/>
 	}
@@ -23,8 +22,6 @@ const Nav = ({ theme, theme_callback }) => {
 	return (
 		<nav className={nav_styles.navbar}>
 			<ul className={nav_styles.navbar_nav}>
-				{/* <span className={`${nav_styles.link_text} ${nav_styles.logo_text}`}>Epilan</span> */}
-				
 				<li className={nav_styles.logo}>
 					<Link href="/"><a className={nav_styles.nav_link}>
 						<span className={nav_styles.link_text, nav_styles.logo_text}>Epilan</span></a>

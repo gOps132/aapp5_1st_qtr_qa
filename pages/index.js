@@ -2,9 +2,10 @@
 // const sizeOf = require('image-size');
 
 import Head from 'next/head';
-
 import Image from 'next/image';
+
 import home_styles from '../styles/Home.module.css';
+import image_styles from '../styles/Image.module.css';
 
 import React, { useState, useEffect } from "react";
 
@@ -48,17 +49,22 @@ export default function Home(props) {
 
 	return (
 		<>
-			
 			<Confetti width={windowSize.width} height={windowSize.height} />
 			<Head>
 				<title>Welcome Home Presentation</title>
 				<meta name="welcome home presentation" content="made with nextjs" />
 			</Head>
-			{console.log(props)}
 			<main className={home_styles.main_div}>
 				<div className={`${home_styles.section_01}`}>
-					<h1>WELCOME HOME INSERT TEMPLATE</h1>
-					
+					<h1>WELCOME HOME PAPA!</h1>
+				</div>
+				<div className={image_styles.image_border_circle}>
+					<Image
+						src="/img/01.png"
+						width={400}
+						height={400}
+						layout="fixed"
+					/>
 				</div>
 			</main>
 		</>

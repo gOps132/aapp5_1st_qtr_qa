@@ -22,14 +22,20 @@
 /* have to make a false body */
 false_body {
 	position: fixed;
-	height: 1000vh;
-	width: 1000vw;
+	height: 150vh;
+	width: 150vw;
 	top: -50%;
 	left: -50%;
 	
 	z-index: -10;
 
-	background-color: var(--bg-primary);
+	background-image: url(/img/background/deep_ocean_background.svg);
+	/* Center and scale the image nicely */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	/* background-color: var(--b-bg-primary); */
 	overflow: hidden;
 }
 
@@ -74,16 +80,26 @@ article:last-child {
 	--b-bg-primary: #e3daaa;
 }
 
+.sea {
+	--text-primary: #40b6da;
+	--text-secondary: #044e66;
+	--bg-primary: #5aafc9;
+	--bg-secondary: #47bbc4;
+
+	--b-bg-primary: #5ca8ca;
+}
+
 body::-webkit-scrollbar {
 	width: 0.25rem;
+	height: 0.25rem;
 }
 
 body::-webkit-scrollbar-track {
-	background: #1e1e24;
+	background: var(--bg-secondary);
 }
 
 body::-webkit-scrollbar-thumb {
-	background: #1d113d;
+	background: var(--b-bg-primary);
 }
 
 a {
