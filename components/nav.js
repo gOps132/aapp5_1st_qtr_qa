@@ -4,10 +4,11 @@ import React from "react";
 import Link from "next/link";
 
 import GithubBrandIcon from "../public/svg/github-brands.svg";
+import LaughIcon from "../public/svg/laugh-squint-solid.svg";
 
 import SeaIcon from "../public/svg/water-solid.svg";
 
-const Nav = ({ theme, theme_callback }) => {
+const Nav = ({ theme, theme_callback, toggle_callback }) => {
 	const GetThemeType = () => {
 		if(theme == "dark")
 			return <DarkIcon/>
@@ -34,6 +35,13 @@ const Nav = ({ theme, theme_callback }) => {
 						<span className={nav_styles.link_text}>Repo</span>
 					</a>
 					</Link>
+				</li>
+
+				<li className={nav_styles.nav_item}>
+					<a className={nav_styles.nav_link} onClick={() => { toggle_callback(); }}>
+						<LaughIcon/>
+						<span className={nav_styles.link_text}>Confetti</span>
+					</a>
 				</li>
 
 				<li className={nav_styles.nav_item}>

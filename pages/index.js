@@ -7,9 +7,7 @@ import Image from 'next/image';
 import home_styles from '../styles/Home.module.css';
 import image_styles from '../styles/Image.module.css';
 
-import React, { useState, useEffect } from "react";
-
-import Confetti from 'confetti-react';
+import React from "react";
 
 export default function Home(props) {
 	// let [tick, useTick] = useState(0);
@@ -28,28 +26,8 @@ export default function Home(props) {
 	// 	}, 3000);
 	// }, []);
 
-	const [windowSize, setWindowSize] = useState({
-		width: undefined,
-		height: undefined,
-	});
-
-	useEffect(() => {
-		let handleResize = () => {
-			setWindowSize({
-				width: window.innerWidth,
-				height: window.innerHeight,
-			});
-		}
-		window.addEventListener("resize", handleResize);
-		handleResize();
-
-		// Remove event listener on cleanup
-		return () => window.removeEventListener("resize", handleResize);
-	}, []);
-
 	return (
 		<>
-			<Confetti width={windowSize.width} height={windowSize.height} />
 			<Head>
 				<title>Welcome Home Presentation</title>
 				<meta name="welcome home presentation" content="made with nextjs" />
@@ -63,7 +41,6 @@ export default function Home(props) {
 						src="/img/01.png"
 						width={400}
 						height={400}
-						layout="fixed"
 					/>
 				</div>
 			</main>

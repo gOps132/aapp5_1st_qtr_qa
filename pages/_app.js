@@ -4,17 +4,12 @@ import Nav from "../components/nav";
 import Scbtn from "../components/scroll_to_top";
 import Footer from "../components/footer";
 
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback,  useEffect } from "react";
+
+import Confetti from 'confetti-react';
 
 function MyApp({ Component, pageProps }) {
-	// starts with light
-	
-	// const theme_map = {
-	// 	light: 'dark',
-	// 	solar: 'light',
-	// 	dark: 'solar',
-	// };
-
+	// start with sea
 	const theme_map = {
 		sea: 'dark',
 		dark: 'sea',
@@ -27,9 +22,35 @@ function MyApp({ Component, pageProps }) {
 		useTheme(theme_map[currentTheme]);
 	});
 
+	let [confetti, useConfetti] = useState(false);
+	
+	const toggle_confetti = useCallback(() => {
+		useConfetti(!confetti);
+	})
+
+	const [windowSize, setWindowSize] = useState({
+		width: undefined,
+		height: undefined,
+	});
+
+	useEffect(() => {
+		let handleResize = () => {
+			setWindowSize({
+				width: window.innerWidth,
+				height: window.innerHeight,
+			});
+		}
+		window.addEventListener("resize", handleResize);
+		handleResize();
+
+		// Remove event listener on cleanup
+		return () => window.removeEventListener("resize", handleResize);
+	}, []);
+
 	return (
 		<div className={currentTheme}>
-			<Nav theme={currentTheme} theme_callback={toggle_theme} theme_map={theme_map} />
+			{ ( confetti ? <Confetti width={windowSize.width} height={windowSize.height} /> : <></> ) }
+			<Nav theme={currentTheme} theme_callback={toggle_theme} toggle_callback={toggle_confetti} theme_map={theme_map} />
 			<false_body></false_body>
 			<article>
 				<div className={`inner_root`}>
