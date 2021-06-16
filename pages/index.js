@@ -1,5 +1,5 @@
-// const fs = require("fs");
-// const sizeOf = require('image-size');
+const fs = require("fs");
+const sizeOf = require('image-size');
 
 import Head from 'next/head';
 import Image from 'next/image';
@@ -7,24 +7,24 @@ import Image from 'next/image';
 import home_styles from '../styles/Home.module.css';
 import image_styles from '../styles/Image.module.css';
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 export default function Home(props) {
-	// let [tick, useTick] = useState(0);
-	// let [image, useImage] = useState(props.main_obj.files[0]);
+	let [tick, useTick] = useState(0);
+	let [image, useImage] = useState(props.main_obj.files[tick]);
 
-	// useEffect(() => {
-	// 	useImage(props.main_obj.files[tick]);
-	// 	setInterval(() => {
-	// 		useImage(props.main_obj.files[tick]);
-	// 		if (tick == props.main_obj.files.length-1) {
-	// 			useTick(0)
-	// 		} else {
-	// 			useTick(tick++);
-	// 		}
-	// 		console.log(tick);
-	// 	}, 3000);
-	// }, []);
+	useEffect(() => {
+		// run every 3 seconds
+		let m_interval = setInterval(() => {
+			useImage(props.main_obj.files[tick]);
+			useTick(tick == 2 ? 0 : tick++);
+		}, 5000);
+
+		console.log(tick);
+		return () => {
+			clearInterval(m_interval);
+		}
+	}, [tick]);
 
 	return (
 		<>
@@ -38,7 +38,7 @@ export default function Home(props) {
 				</div>
 				<div className={image_styles.image_border_circle}>
 					<Image
-						src="/img/01.png"
+						src={`/img/profile/${image.filename}`}
 						width={400}
 						height={400}
 					/>
@@ -48,29 +48,29 @@ export default function Home(props) {
 	)
 }
 
-// export async function getStaticProps() {
-// 	const image_path = "public/img/background";
+export async function getStaticProps() {
+	const image_path = "public/img/profile";
 
-// 	let img_obj = {
-// 		files: [],
-// 	}
+	let img_obj = {
+		files: [],
+	}
 
-// 	let image_names = fs.readdirSync(image_path);
-// 	console.log(image_names);
-// 	for (let i = 0; i < image_names.length; i++) {
-// 		let m_width = sizeOf(`${image_path}/${image_names[i]}`).width;
-// 		let m_height = sizeOf(`${image_path}/${image_names[i]}`).height;
-// 		img_obj.files.push({
-// 			filename: image_names[i],
-// 			width: Math.round(m_width),
-// 			height: Math.round(m_height),
-// 		});
-// 	}
+	let image_names = fs.readdirSync(image_path);
+	console.log(image_names);
+	for (let i = 0; i < image_names.length; i++) {
+		let m_width = sizeOf(`${image_path}/${image_names[i]}`).width;
+		let m_height = sizeOf(`${image_path}/${image_names[i]}`).height;
+		img_obj.files.push({
+			filename: image_names[i],
+			width: Math.round(m_width),
+			height: Math.round(m_height),
+		});
+	}
 
-// 	return {
-// 		props: {
-// 			main_obj: img_obj
-// 		},
-// 		revalidate: 60
-// 	}
-// }
+	return {
+		props: {
+			main_obj: img_obj
+		},
+		revalidate: 60
+	}
+}
