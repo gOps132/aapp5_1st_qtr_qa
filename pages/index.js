@@ -13,7 +13,7 @@ import React, { useState, useEffect, useRef } from "react";
 export default function Home(props) {
 	let [index, setIndex] = useState(0);
 	const timeoutRef = useRef(null);
-	const delay = 5000;
+	const delay = 2500;
 
 	let resetTimeout = () => {
 		if (timeoutRef.current) {
@@ -48,18 +48,26 @@ export default function Home(props) {
 					<h1>WELCOME HOME PAPA!</h1>
 				</div>
 				<div className={slideshow_styles.slideshow}>
-					<div 
+					<div
 						className={slideshow_styles.slideshowSlider}
 						style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
 					>
 						{props.main_obj.files.map((t, i) => (
-							<Image
-								className={image_styles.image_border_circle}
-								src={`/img/profile/${t.filename}`}
-								width={800}
-								height={800}
+							<div
 								key={i}
-							/>
+								style={{ 
+									visibility: `${i == index ? "visible" : "hidden"}`,
+									display: 'inline', 
+									// transform: `translate3d(0, 0, 5em)`
+								}}
+							>
+								<Image
+									className={image_styles.image_border_circle}
+									src={`/img/profile/${t.filename}`}
+									width={800}
+									height={800}
+								/>
+							</div>
 						))}
 					</div>
 				</div>
