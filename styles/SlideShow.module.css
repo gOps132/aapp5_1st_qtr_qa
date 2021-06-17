@@ -1,0 +1,11 @@
+.slideshow {
+	margin: 0 auto;
+	overflow: hidden;
+	max-width: 500px;
+	border-radius: 50%;
+}
+
+.slideshowSlider {
+	white-space: nowrap;
+	transition: ease 1000ms;
+}

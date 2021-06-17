@@ -8,6 +8,7 @@
 
 .section_01 h1 {
 	font-size: 6rem;
+	font-weight: bolder;
 }
 
 @media only screen and (max-width: 600px) {

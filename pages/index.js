@@ -6,25 +6,36 @@ import Image from 'next/image';
 
 import home_styles from '../styles/Home.module.css';
 import image_styles from '../styles/Image.module.css';
+import slideshow_styles from '../styles/SlideShow.module.css';
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 export default function Home(props) {
-	let [tick, useTick] = useState(0);
-	let [image, useImage] = useState(props.main_obj.files[tick]);
+	let [index, setIndex] = useState(0);
+	const timeoutRef = useRef(null);
+	const delay = 5000;
+
+	let resetTimeout = () => {
+		if (timeoutRef.current) {
+			clearTimeout(timeoutRef.current);
+		}
+	}
 
 	useEffect(() => {
-		// run every 3 seconds
-		let m_interval = setInterval(() => {
-			useImage(props.main_obj.files[tick]);
-			useTick(tick == 2 ? 0 : tick++);
-		}, 5000);
+		resetTimeout();
+		timeoutRef.current = setTimeout(
+			() =>
+				setIndex((prevIndex) =>
+					prevIndex === props.main_obj.files.length - 1 ? 0 : prevIndex + 1
+				),
+			delay
+		);
 
-		console.log(tick);
 		return () => {
-			clearInterval(m_interval);
-		}
-	}, [tick]);
+			resetTimeout();
+		};
+	}, [index]);
+
 
 	return (
 		<>
@@ -36,12 +47,21 @@ export default function Home(props) {
 				<div className={`${home_styles.section_01}`}>
 					<h1>WELCOME HOME PAPA!</h1>
 				</div>
-				<div className={image_styles.image_border_circle}>
-					<Image
-						src={`/img/profile/${image.filename}`}
-						width={400}
-						height={400}
-					/>
+				<div className={slideshow_styles.slideshow}>
+					<div 
+						className={slideshow_styles.slideshowSlider}
+						style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
+					>
+						{props.main_obj.files.map((t, i) => (
+							<Image
+								className={image_styles.image_border_circle}
+								src={`/img/profile/${t.filename}`}
+								width={800}
+								height={800}
+								key={i}
+							/>
+						))}
+					</div>
 				</div>
 			</main>
 		</>
