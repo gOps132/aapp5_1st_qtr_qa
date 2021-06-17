@@ -55,17 +55,18 @@ export default function Home(props) {
 						{props.main_obj.files.map((t, i) => (
 							<div
 								key={i}
+								className={image_styles.image_transform_container}
 								style={{ 
 									visibility: `${i == index ? "visible" : "hidden"}`,
+									opacity: (i == index ? 1 : 0),
 									display: 'inline', 
-									// transform: `translate3d(0, 0, 5em)`
 								}}
 							>
 								<Image
 									className={image_styles.image_border_circle}
 									src={`/img/profile/${t.filename}`}
-									width={800}
-									height={800}
+									width={500}
+									height={500}
 								/>
 							</div>
 						))}

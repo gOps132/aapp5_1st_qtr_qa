@@ -1,5 +1,4 @@
 .image_border_circle {
-	
 	max-width: fit-content;
 	
 	display: flex;
@@ -9,7 +8,12 @@
 
 	border-color: var(--bg-secondary);
 	border-radius: 50%;
+}
 
-	-webkit-transition: opacity 600ms, visibility 600ms;
-	transition: opacity 600ms, visibility 600ms;
+.image_transform_container {
+	visibility: hidden;
+	opacity: 0;
+
+	-webkit-transition: opacity var(--transition-speed), visibility var(--transition-speed);
+	transition: opacity var(--transition-speed), visibility var(--transition-speed);
 }
