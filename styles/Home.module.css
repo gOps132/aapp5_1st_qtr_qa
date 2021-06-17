@@ -4,6 +4,8 @@
 	align-items: center;
 	text-align: center;
 	justify-content: center;
+
+	overflow-x: hidden;
 }
 
 .section_01 h1 {
