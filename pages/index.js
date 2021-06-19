@@ -85,6 +85,9 @@ export default function Home(props) {
 					<Message name="Reina">
 						<p>Thank you for all the sacrifices you have done all these years</p>
 					</Message>
+					<Message name="Christine">
+						<p>[message_not_found]</p>
+					</Message>
 				</div>
 			</main>
 		</>
