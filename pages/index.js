@@ -7,13 +7,14 @@ import Image from 'next/image';
 import home_styles from '../styles/Home.module.css';
 import image_styles from '../styles/Image.module.css';
 import slideshow_styles from '../styles/SlideShow.module.css';
+import message_styles from '../styles/Message.module.css';
 
 import React, { useState, useEffect, useRef } from "react";
 
 export default function Home(props) {
 	let [index, setIndex] = useState(0);
 	const timeoutRef = useRef(null);
-	const delay = 2500;
+	const delay = 8000;
 
 	let resetTimeout = () => {
 		if (timeoutRef.current) {
@@ -45,7 +46,7 @@ export default function Home(props) {
 			</Head>
 			<main className={home_styles.main_div}>
 				<div className={`${home_styles.section_01}`}>
-					<h1>WELCOME HOME PAPA!</h1>
+					<h1>HAPPY FATHERS DAY!</h1>
 				</div>
 				<div className={slideshow_styles.slideshow}>
 					<div
@@ -72,9 +73,33 @@ export default function Home(props) {
 						))}
 					</div>
 				</div>
+					<br/>
+					<br/>
+				<div className={message_styles.message_cluster}>
+					<Message name="Gian">
+						<p>Thank you for all your sacrifices papa. Happy Fathers Day!</p>
+					</Message>
+					<Message name="Gillian">
+						<p>Happy Fathers Day!</p>
+					</Message>
+					<Message name="Reina">
+						<p>Thank you for all the sacrifices you have done all these years</p>
+					</Message>
+				</div>
 			</main>
 		</>
 	)
+}
+
+const Message = (props) => {
+	return (
+		<div className={message_styles.message_container}>
+			<div className={message_styles.message_inner}>
+				{props.children}
+				<name>- {props.name}</name>
+			</div>
+		</div>
+	);
 }
 
 export async function getStaticProps() {
