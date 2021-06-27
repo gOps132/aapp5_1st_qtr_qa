@@ -52,17 +52,6 @@ export default function WelcomeHome(props) {
 	)
 }
 
-const Message = (props) => {
-	return (
-		<div className={message_styles.message_container}>
-			<div className={message_styles.message_inner}>
-				{props.children}
-				<name>- {props.name}</name>
-			</div>
-		</div>
-	);
-}
-
 export async function getStaticProps() {
 	const image_path = "public/img/profile";
 
