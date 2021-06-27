@@ -5,11 +5,12 @@ import Head from 'next/head';
 
 import ISS from '../components/image_slideshow';
 import home_styles from '../styles/Home.module.css';
+import welcome_home_styles from '../styles/WelcomeHome.module.css';
 import message_styles from '../styles/Message.module.css';
 
 import React, { useState, useEffect, useRef } from "react";
 
-export default function Home(props) {
+export default function WelcomeHome(props) {
 	let [index, setIndex] = useState(0);
 	const timeoutRef = useRef(null);
 	const delay = 8000;
@@ -35,7 +36,6 @@ export default function Home(props) {
 		};
 	}, [index]);
 
-
 	return (
 		<>
 			<Head>
@@ -43,26 +43,10 @@ export default function Home(props) {
 				<meta name="welcome home presentation" content="made with nextjs" />
 			</Head>
 			<main className={home_styles.main_div}>
-				<div className={`${home_styles.section_01}`}>
-					<h1>HAPPY FATHERS DAY!</h1>
+				<div className={`${welcome_home_styles.section_01}`}>
+					<h1>WELCOME HOME!!</h1>
 				</div>
-				<ISS p_main_images={props.main_obj.files} p_index={index}/>
-					<br/>
-					<br/>
-				<div className={message_styles.message_cluster}>
-					<Message name="Gian">
-						<p>Thank you for all your sacrifices papa. Happy Fathers Day!</p>
-					</Message>
-					<Message name="Gillian">
-						<p>Happy Fathers Day!</p>
-					</Message>
-					<Message name="Reina">
-						<p>Thank you for all the sacrifices you have done all these years</p>
-					</Message>
-					<Message name="Christine">
-						<p>[message_not_found]</p>
-					</Message>
-				</div>
+				<ISS p_main_images={props.main_obj.files} p_index={index} p_size={600}/>
 			</main>
 		</>
 	)

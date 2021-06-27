@@ -1,0 +1,16 @@
+.section_01 h1 {
+	font-size: 9rem;
+	font-weight: 900;
+	/* color: linear-gradient(45deg, var(--text-secondary), var(--text-primary)); */
+	background: linear-gradient(45deg, #009AB3, #57F7ED,
+			#CFF0FC, #AFF1F8, #7BF1F2, #51F2EC, #DBF0FE, #CFEDFE, #BCE8FE, #FFFFFE, #F9FDFE, #009AB3);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	filter: brightness(-1);
+}
+
+@media only screen and (max-width: 600px) {
+	.section_01 h1 {
+		font-size: 5rem;
+	}
+}
