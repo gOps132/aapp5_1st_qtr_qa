@@ -29,7 +29,7 @@ const Nav = ({ theme, theme_callback, toggle_callback }) => {
 				</li>
 
 				<li className={nav_styles.nav_item}>
-					<Link href="https://github.com/gOps132/wh_presentation"><a className={nav_styles.nav_link}>
+					<Link href="https://github.com/gOps132/aapp5_1st_qtr_qa"><a className={nav_styles.nav_link}>
 						<GithubBrandIcon/>
 						<span className={nav_styles.link_text}>Repo</span>
 					</a>
