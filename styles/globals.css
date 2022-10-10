@@ -80,26 +80,17 @@ article:last-child {
 	--b-bg-primary: #e3daaa;
 }
 
-.sea {
-	--text-primary: #40b6da;
-	--text-secondary: #044e66;
-	--bg-primary: #5aafc9;
-	--bg-secondary: #47bbc4;
-
-	--b-bg-primary: #5ca8ca;
-}
-
 body::-webkit-scrollbar {
 	width: 0.50rem;
 	height: 0.15rem;
 }
 
 body::-webkit-scrollbar-track {
-	background: var(--bg-secondary);
+	background: var(--b-bg-primary);
 }
 
 body::-webkit-scrollbar-thumb {
-	background: var(--b-bg-primary);
+	background: var(--bg-primary);
 }
 
 a {

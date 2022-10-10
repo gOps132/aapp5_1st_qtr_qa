@@ -5,6 +5,7 @@ import Link from "next/link";
 
 import GithubBrandIcon from "../public/svg/github-brands.svg";
 import HomeIcon from "../public/svg/house-user-solid.svg";
+import MapIcon from "../public/svg/map-solid.svg";
 import LaughIcon from "../public/svg/laugh-squint-solid.svg";
 
 const Nav = ({ theme, theme_callback, toggle_callback }) => {
@@ -27,7 +28,13 @@ const Nav = ({ theme, theme_callback, toggle_callback }) => {
 					</a>
 					</Link>
 				</li>
-
+				<li className={nav_styles.nav_item}>
+					<Link href="/map"><a className={nav_styles.nav_link}>
+						<MapIcon/>
+						<span className={nav_styles.link_text}>Map</span>
+					</a>
+					</Link>
+				</li>
 				<li className={nav_styles.nav_item}>
 					<Link href="https://github.com/gOps132/aapp5_1st_qtr_qa"><a className={nav_styles.nav_link}>
 						<GithubBrandIcon/>
