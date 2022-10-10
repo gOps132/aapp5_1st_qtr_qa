@@ -12,16 +12,11 @@
 }
 
 .m_footer_elm>* {
-    /* margin-left: 1rem;
-    margin-right: 1rem;
-     */
     margin: 1rem;
     transition: all var(--transition-speed) ease;
 
     color: var(--text-primary);
     border-color: var(--b-bg-primary);
-
-    width: 40vh;
 }
 
 .m_footer_elm.ul {

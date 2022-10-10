@@ -44,6 +44,10 @@ article {
 	overflow-y: hidden;
 }
 
+article::-webkit-scrollbar {
+	display: none;
+}
+
 article:last-child {
 	margin-top: auto;
 }

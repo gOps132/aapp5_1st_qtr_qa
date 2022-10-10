@@ -1,0 +1,19 @@
+
+.map_container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+
+	overflow-x: hidden;
+}
+
+.map_container::-webkit-scrollbar {
+    display: none;
+}
+
+.map_container_iframe {
+    height: 100%;
+    width: 100%;
+}

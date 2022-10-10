@@ -14,6 +14,7 @@ class MyDocument extends Document {
 					<link rel="icon" href="/favicon/16.png" type="image/png" sizes="16x16" />
 					<link rel="icon" href="/favicon/48.png" type="image/png" sizes="48x48" />
 					<link rel="icon" href="/favicon/svg" type="image/svg+xml" sizes="any" />
+					<meta name="AAPP5 QA" content="made with nextjs" />
 				</Head>
 				<body>
 					<Main />

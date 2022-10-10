@@ -9,7 +9,6 @@ export default function Home(props) {
 		<>
 			<Head>
 				<title>AAPP 5 QA</title>
-				<meta name="" content="made with nextjs" />
 			</Head>
 			<main className={home_styles.main_div}>
 				{/* map google map to the place */}
