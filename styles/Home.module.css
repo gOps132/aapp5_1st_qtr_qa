@@ -8,19 +8,6 @@
 	overflow-x: hidden;
 }
 
-.section_01 h1 {
-	font-size: 6rem;
-	font-weight: 900;
-	/* color: linear-gradient(45deg, var(--bg-secondary), var(--bg-primary)); */
-	/* background: linear-gradient(
-		to right, #03256C, #2541B2,
-		 #1768AC, #204492); */
-	-webkit-text-fill-color: transparent;
-	-webkit-background-clip: text;
-}
-
-@media only screen and (max-width: 600px) {
-	.section_01 h1 {
-		font-size: 4rem;
-	}	
+.inner_div {
+	max-width: 80vw;
 }

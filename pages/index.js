@@ -8,14 +8,16 @@ export default function Home(props) {
 	return (
 		<>
 			<Head>
-				<title>AAPP 5 QA</title>
+				<title>Home</title>
 			</Head>
 			<main className={home_styles.main_div}>
-				{/* map google map to the place */}
-				<div>
-
+				<div className={home_styles.inner_div}>
+					//todo make nice homepage
+					
+					<br></br>Happy Bday to X
+					<br></br>location on Bai hotel on blah blah
 				</div>
 			</main>
-		</>
+		</>	
 	)
 }
