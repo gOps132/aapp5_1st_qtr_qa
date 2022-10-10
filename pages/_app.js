@@ -9,10 +9,10 @@ import React, { useState, useCallback,  useEffect } from "react";
 import Confetti from 'confetti-react';
 
 function MyApp({ Component, pageProps }) {
-	// start with sea
 	const theme_map = {
-		sea: 'dark',
-		dark: 'sea',
+		dark: 'light',
+		light: 'solar',
+		solar: 'dark'
 	};
 
 	let [currentTheme, useTheme] = useState(

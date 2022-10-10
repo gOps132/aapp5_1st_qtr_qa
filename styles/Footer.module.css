@@ -9,8 +9,6 @@
     background-color: var(--bg-primary);
 
     font-size: 0.8rem;
-
-    filter: opacity(0.9);
 }
 
 .m_footer_elm>* {
@@ -31,6 +29,7 @@
 
 .m_footer_elm * {
     color: var(--text-secondary);
+    filter: grayscale(0%) opacity(0.5);
 }
 
 @media only screen and (max-width: 600px) {

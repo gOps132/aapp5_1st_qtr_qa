@@ -1,19 +1,19 @@
 {
-  "name": "wh_presentation",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
-  },
-  "dependencies": {
-    "@svgr/webpack": "^5.5.0",
-    "confetti-react": "^2.5.0",
-    "fs": "0.0.1-security",
-    "image-size": "^1.0.0",
-    "next": "10.2.3",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
-  }
+    "name": "aapp5_1st_qtr_qa",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start"
+    },
+    "dependencies": {
+        "@svgr/webpack": "^5.5.0",
+        "confetti-react": "^2.5.0",
+        "fs": "0.0.1-security",
+        "image-size": "^1.0.0",
+        "next": "10.2.3",
+        "react": "17.0.2",
+        "react-dom": "17.0.2"
+    }
 }
