@@ -22,11 +22,11 @@ export default function Home(props) {
 				<div className={home_styles.inner_div}>
 					{/* invitation */}
 					<div className={invitation_styles.invitation_container}>
-						<h1>Your invited to this awesome event!</h1>
-						<h1>By:</h1>
+						<h1>Howdy!</h1>
 						<UserIcon/>
 						<h2>Anonymous Client</h2>
-
+						
+						<h1>Your invited to this awesome birthday party!</h1>
 						<a href="/map" placeholder="Map Location" className={invitation_styles.map_redirect_button}>
 							<div>
 								<h1>See Where to Go!</h1>
