@@ -29,11 +29,18 @@ false_body {
 	
 	z-index: -10;
 
-	background-color: var(--b-bg-primary);
+	/* background-color: var(--b-bg-primary); */
+
+	background-image: url(/img/background/mountain_landscape16.svg);
+
 	/* Center and scale the image nicely */
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+
+	/* background: linear-gradient(
+		to bottom, var(--bg-secondary), var(--b-bg-primary),
+		 var(--text-primary), var(--bg-primary)); */
 
 	/* background-color: var(--b-bg-primary); */
 	overflow: hidden;
