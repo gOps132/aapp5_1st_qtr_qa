@@ -22,7 +22,18 @@ export default function Map(props) {
 						className={map_styles.map_container_iframe}
 						allowfullscreen>
 					</iframe>
-				</div>				
+				</div>
+				<div className={map_styles.directions_container}>
+					<div className={map_styles.list_container}>
+						<h1>Directions</h1>
+						<li>Head east on Cebu S Rd/Natalio B. Bacalso S National Hwy</li>
+						<li>Turn right toward Cebu South Coastal Rd</li>
+						<li>Continue onto CSCR Tunnel</li>
+						<li>Merge onto Sergio Osmeña Jr Blvd</li>
+						<li>Continue onto Mandaue Causeway/Ouano Ave</li>
+						<li>Destination will be on the right</li>
+					</div>
+				</div>
 			</div>
 		</>
 	)

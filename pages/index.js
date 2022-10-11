@@ -25,8 +25,8 @@ export default function Home(props) {
 						<h1>Howdy!</h1>
 						<UserIcon/>
 						<h2>Anonymous Client</h2>
-						
 						<h1>Your invited to this awesome birthday party!</h1>
+						<h1>From 02:00PM - 07:00PM</h1>
 						<a href="/map" placeholder="Map Location" className={invitation_styles.map_redirect_button}>
 							<div>
 								<h1>See Where to Go!</h1>
