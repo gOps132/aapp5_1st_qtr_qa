@@ -41,3 +41,9 @@
     filter: grayscale(0) opacity(1);
     background-color: var(--bg-primary);
 }
+
+@media only screen and (max-width: 600px) {
+	.invitation_container h1 {
+        font-size: 1.5rem;
+    }
+}
