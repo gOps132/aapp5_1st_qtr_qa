@@ -10,8 +10,7 @@
 
     font-size: 0.8rem;
 
-	filter: grayscale(100%) opacity(0.5);
-	transition: var(--transition-speed);
+	filter:  opacity(0.9);
 }
 
 .m_footer_elm>* {
@@ -22,22 +21,17 @@
     border-color: var(--b-bg-primary);
 }
 
-.m_footer:hover {
-    transition: all var(--transition-speed) ease;
-	filter: grayscale(100%) opacity(0.7);
-}
-
 .m_footer_elm.ul {
     text-decoration: none;
 }
 
 .m_footer_elm * {
     color: var(--text-secondary);
-    filter: grayscale(100%) opacity(0.5);
+    filter:  opacity(0.5);
 }
 
 .m_footer_elm *:hover {
-    filter: grayscale(0%) opacity(1);
+    filter:  opacity(1);
 }
 
 
